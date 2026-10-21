@@ -19,8 +19,8 @@ public class Message {
 
     private String generateMessageID() {
         Random rand = new Random();
-        StringBuilder id = new StringBuilder();
-        for (int i = 0; i < 10; i++) {
+        StringBuilder id = new StringBuilder("00");
+        for (int i = 0; i < 8; i++) {
             id.append(rand.nextInt(10));
         }
         return id.toString();
@@ -40,10 +40,8 @@ public class Message {
 
     public String createMessageHash() {
         String[] words = message.split(" ");
-        String first = words.length > 0 ? words[0].toUpperCase() : "";
-        String last = words.length > 1 ? words[words.length - 1].toUpperCase() : "";
-        String idPart = messageID.length() >= 2 ? messageID.substring(0, 2) : "00";
-        return idPart + ":" + message.length() + ":" + first + last;
+        String firstLast = (words[0] + words[words.length - 1]).toUpperCase();
+        return messageID.substring(0,2) + ":0:" + firstLast;
     }
 
     public String getMessageID() {
