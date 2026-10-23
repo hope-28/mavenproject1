@@ -44,5 +44,27 @@ public class Message {
         return messageID.substring(0,2) + ":0:" + firstLast;
     }
 
-   
+    public String getMessageID() {
+        return messageID;
+    }
+
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public String getMessageHash() {
+        return messageHash;
+    }
+
+    public String sendMessage() {
+        return JOptionPane.showInputDialog("Choose option:\n1. Send Message\n2. Disregard Message\n3. Store Message to send later");
+    }
+
+    public String printMessage() {
+        return "Message ID: " + messageID + "\nMessage Hash: " + messageHash + "\nRecipient: " + recipient + "\nMessage: " + message;
+    }
 }
