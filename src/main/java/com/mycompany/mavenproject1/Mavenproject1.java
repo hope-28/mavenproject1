@@ -3,6 +3,8 @@ package com.mycompany.mavenproject1;
 // commit 3-stored messages
 // commit 4-display messages
 //commit 5-search messages
+// commit 6-part 3 final-delete and report features complete
+// commit 7
 
 import javax.swing.JOptionPane;
 
