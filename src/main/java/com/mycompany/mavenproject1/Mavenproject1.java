@@ -71,5 +71,36 @@ public class Mavenproject1 {
         }
         
         JOptionPane.showMessageDialog(null, "Total messages sent: " + sentCount);
+        
+       // Part 3 - Stored Messages Menu
+MessageManager manager = new MessageManager();
+manager.populateTestData();
+
+String choice = JOptionPane.showInputDialog(
+    "Stored Messages Menu:\n" +
+    "a. Display Stored Messages\n" +
+    "b. Display Longest Message\n" +
+    "c. Search by Message ID\n" +
+    "d. Search by Recipient\n" +
+    "e. Delete by Hash\n" +
+    "f. Display Report\n" +
+    "Enter a - f:");
+
+if (choice.equalsIgnoreCase("a")) {
+    JOptionPane.showMessageDialog(null, manager.displayStoredMessages());
+} else if (choice.equalsIgnoreCase("b")) {
+    JOptionPane.showMessageDialog(null, "Longest: " + manager.displayLongestMessage());
+} else if (choice.equalsIgnoreCase("c")) {
+    String id = JOptionPane.showInputDialog("Enter Message ID:");
+    JOptionPane.showMessageDialog(null, manager.searchByMessageID(id));
+} else if (choice.equalsIgnoreCase("d")) {
+    String rec = JOptionPane.showInputDialog("Enter Recipient:");
+    JOptionPane.showMessageDialog(null, manager.searchByRecipient(rec));
+} else if (choice.equalsIgnoreCase("e")) {
+    String hash = JOptionPane.showInputDialog("Enter Hash:");
+    JOptionPane.showMessageDialog(null, manager.deleteByHash(hash));
+} else if (choice.equalsIgnoreCase("f")) {
+    JOptionPane.showMessageDialog(null, manager.displayReport());
+} 
     }
 }
